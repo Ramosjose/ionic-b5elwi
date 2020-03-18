@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { Pelicula } from 'Model/pelicula.interface';
+import { Pelicula } from '../app/Model/pelicula';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@Injectable({ providedIn: 'root'})
+@Injectable()
 export class ServicePelisService {
   private url: string = '';
   private apiKey: string = '3ba2f426';
