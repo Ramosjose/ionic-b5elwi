@@ -2,8 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
-import {details} from '../pages/details/details';
+import {HttpClientModule} from '@angular/common/http';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ServicePelisService } from './service-pelis.service';
@@ -16,7 +15,8 @@ import { ServicePelisService } from './service-pelis.service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -25,7 +25,8 @@ import { ServicePelisService } from './service-pelis.service';
     TabsPage
   ],
   providers: [
-    {provide: ErrorHandler, useClass: IonicErrorHandler, providers: [ServicePelisService]}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ServicePelisService
   ]
 })
 export class AppModule {}
